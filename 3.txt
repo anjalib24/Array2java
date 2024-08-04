@@ -1,0 +1,23 @@
+In Java, arrays are stored in the Java Virtual Machine (JVM) heap memory. Here’s a breakdown of where and how arrays are managed in memory:
+
+1. **Heap Memory**: The heap is a portion of memory allocated for objects and arrays. When you create an array in Java, it is allocated space in the heap. The heap is where all Java objects, including arrays, are dynamically allocated.
+
+2. **Array Header**: Each array object in Java has a header that contains metadata about the array, such as its length and type. This header is stored in the heap memory along with the actual data.
+
+3. **Array Elements**: The elements of the array are also stored in the heap memory. For primitive types (e.g., `int`, `double`), the values are stored directly. For object types (e.g., arrays of `String`), the elements are references (pointers) to objects, which are themselves stored in the heap.
+
+4. **Garbage Collection**: The JVM manages heap memory and performs garbage collection to reclaim memory used by objects and arrays that are no longer referenced. This helps in managing memory efficiently and preventing memory leaks.
+
+5. **Memory Layout**: When an array is created, the JVM allocates a contiguous block of memory in the heap to store the array’s elements. The size of this block depends on the array’s length and the type of elements it holds.
+
+Here’s an example to illustrate this:
+
+```java
+int[] numbers = new int[5];
+```
+
+In this case:
+- `numbers` is a reference variable stored on the stack.
+- The actual array object, including its length and the space for the 5 `int` elements, is stored in the heap.
+
+The JVM handles all memory management tasks, including the allocation and deallocation of memory for arrays, ensuring that they are properly managed throughout the lifecycle of the application.

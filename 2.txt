@@ -1,0 +1,22 @@
+In Java, array sizes must be non-negative integers. Attempting to use a negative number for the size of an array will result in an exception. Here’s what happens:
+
+1. Creating an Array with Negative Size: When you try to create an array with a negative size, Java throws an `NegativeArraySizeException`. For example:
+   ```java
+   int[] arr = new int[-5]; // This will throw NegativeArraySizeException
+   ```
+
+2. Array Initialization: If you declare an array with a size of zero, it’s a valid array but just empty:
+   ```java
+   int[] arr = new int[0]; // This is a valid, empty array
+   ```
+
+3. Handling Negative Sizes: Before creating an array, you should ensure that the size is non-negative. You can handle such checks with conditional statements to prevent `NegativeArraySizeException`:
+   ```java
+   int size = -5;
+   if (size < 0) {
+       throw new IllegalArgumentException("Array size must be non-negative");
+   }
+   int[] arr = new int[size];
+   ```
+
+So, in summary, in Java, you cannot pass a negative number as an array size; it will result in an exception, and it's essential to validate array sizes before creation.
